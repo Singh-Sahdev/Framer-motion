@@ -1,12 +1,24 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
 
 const Notification = ({
     type,
     message,
+    setIsVisible,
 }: {
     type: string | null;
     message: string | null;
+    setIsVisible: (type:string | null) => void
 }) => {
+    
+    useEffect(()=>{
+        if(type){
+            setTimeout(()=>{
+                setIsVisible(null)
+            },2500)
+        }
+
+    },[type,setIsVisible])
     return (
         <AnimatePresence>
             {type && (

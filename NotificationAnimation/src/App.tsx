@@ -18,9 +18,7 @@ const App = () => {
 			ref.current.value = ''
 		}
 		setIsVisible(type)
-		setTimeout(()=>{
-			setIsVisible(null)
-		},2500)
+		
 	}
 
 	
@@ -53,7 +51,7 @@ const App = () => {
 			</div>
 
 		 	
-			<Notification type={isVisible} message={message} />
+			<Notification type={isVisible} setIsVisible={setIsVisible} message={message} />
 
 			
 
